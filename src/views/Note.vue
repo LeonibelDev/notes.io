@@ -99,4 +99,8 @@ em {
     font-size: 20px;
     letter-spacing: 20px;
 }
+
+img{
+    width: 50%;
+}
 </style>
