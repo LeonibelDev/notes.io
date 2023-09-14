@@ -19,9 +19,10 @@
                                 <button class="btn btn-sm" title="delete" @click="deleteNote(`${note._id}`)">
                                     <font-awesome-icon icon="fa-solid fa-trash" />
                                 </button>
-                                <button class="btn btn-sm" title="edit">
+
+                                <router-link :to="`/edit/${note._id}`" class="btn btn-sm" title="edit">
                                     <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                </button>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -39,6 +40,7 @@
 import Swel from 'sweetalert2'
 import { RouterLink } from 'vue-router'
 import axios from 'axios'
+import { url } from '../constants'
 
 export default {
     data() {
@@ -55,7 +57,7 @@ export default {
     methods: {
         async getTasks() {
             try {
-                const response = await axios.get('https://notes-backend-lps0.onrender.com/api/notes', {
+                const response = await axios.get(url + '/api/notes', {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
@@ -85,7 +87,7 @@ export default {
 
             if (confirm.isConfirmed) {
                 try {
-                    const response = await axios.delete(`https://notes-backend-lps0.onrender.com/api/note/${id}`, {
+                    const response = await axios.delete(url + `/api/note/${id}`, {
                         headers: {
                             'Authorization': `Bearer ${localStorage.getItem('token')}`
                         }

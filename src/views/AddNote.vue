@@ -34,6 +34,7 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { url } from '../constants'
 
 export default {
 
@@ -71,7 +72,7 @@ export default {
 
             try {
 
-                const response = await axios.post("https://notes-backend-lps0.onrender.com/api/note", this.note, {
+                const response = await axios.post(url + "/api/note", this.note, {
 
                     headers: {
 

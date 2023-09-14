@@ -24,6 +24,7 @@
 
 import axios from 'axios'
 import MarkdownIt from 'markdown-it'
+import { url } from '../constants'
 
 export default {
     components: {
@@ -53,7 +54,7 @@ export default {
         async getAndRenderTask() {
             try {
                 // Obtener la tarea desde la API
-                const response = await axios.get(`https://notes-backend-lps0.onrender.com/api/note/${this.$route.params.id}`, {
+                const response = await axios.get(url + `/api/note/${this.$route.params.id}`, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
@@ -100,7 +101,8 @@ em {
     letter-spacing: 20px;
 }
 
-img{
+img {
+    display: none;
     width: 50%;
 }
 </style>

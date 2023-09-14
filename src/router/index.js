@@ -4,6 +4,7 @@ import SignUp from '../views/SignUp.vue'
 import Notes from '../views/Notes.vue'
 import Note from '../views/Note.vue'
 import AddNote from '../views/AddNote.vue'
+import EditTask from '../views/EditTask.vue'
 
 const router = createRouter({
 
@@ -16,6 +17,7 @@ const router = createRouter({
     { path: '/', component: Notes, meta: { requiresAuth: true } },
     { path: '/notes', component: Notes, meta: { requiresAuth: true } },
     { path: '/note/:id', component: Note, meta: { requiresAuth: true } },
+    { path: '/edit/:id', component: EditTask, meta: { requiresAuth: true } },
     { path: '/new', component: AddNote, meta: { requiresAuth: true } },
 
   ]

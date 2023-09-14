@@ -47,10 +47,8 @@
 <script>
 
 import { RouterLink } from 'vue-router'
-
 import axios from 'axios'
-
-import Swal from 'sweetalert2'
+import { url } from '../constants'
 
 export default {
 
@@ -85,7 +83,7 @@ export default {
 
             try {
 
-                const response = await axios.post("https://notes-backend-lps0.onrender.com/api/signup", this.json_data);
+                const response = await axios.post(url + "/api/signup", this.json_data);
 
                 localStorage.setItem('token', response.data.token)
                 this.$router.push({ path: '/notes' })

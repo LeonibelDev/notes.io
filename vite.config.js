@@ -7,7 +7,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   base: '/notes.io/',
   server: {
-    host: true
+    host: false
   },
   plugins: [
     vue(),

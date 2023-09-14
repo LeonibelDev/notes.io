@@ -44,6 +44,7 @@
 <script>
 
 import { RouterLink } from 'vue-router'
+import { url } from '../constants'
 
 import axios from 'axios'
 
@@ -79,7 +80,7 @@ export default {
 
             try {
 
-                const response = await axios.post("https://notes-backend-lps0.onrender.com/api/login", this.json_data)
+                const response = await axios.post(url + "/api/login", this.json_data)
 
                 localStorage.setItem('token', response.data.token)
 
